@@ -1,0 +1,32 @@
+
+.social-handles {
+    width: fit-content;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 15px;
+    background-color: rgba(66, 66, 66, 0.5);
+    backdrop-filter: blur(10px);
+    margin-left: 10px;
+    margin-right: 10px;
+    text-align: center;
+    font-size: 18px;
+    line-height: 40px;
+    font-family: sans-serif;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all .3s ease-out;
+}
+
+.icon .fa-brands {
+    color: #ffffff;
+}

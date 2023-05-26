@@ -1,0 +1,99 @@
+/*social icon*/
+
+.social-handles {
+    width: 100%;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 15px;
+    background-color: rgba(66, 66, 66, 0.5);
+    backdrop-filter: blur(10px);
+    margin-left: 10px;
+    margin-right: 10px;
+    text-align: center;
+    font-size: 18px;
+    line-height: 40px;
+    font-family: sans-serif;
+    overflow: hidden;
+    transition: all .3s ease-out;
+}
+
+.brand-name {
+    color: #fff;
+    font-size: 0px;
+    transition: font-size .3s;
+}
+
+.icon:hover .brand-name {
+    padding-left: 8px;
+    font-size: 18px;
+}
+
+.icon .fa-brands {
+    color: #ffffff;
+}
+
+@media only screen and (min-width: 475px) {
+    .twt:hover {
+        backdrop-filter: blur(10px);
+        background: #1da0f27c;
+        width: 110px;
+        cursor: pointer;
+    }
+
+    .ins:hover {
+        backdrop-filter: blur(10px);
+        background: #833ab47e;
+        width: 140px;
+        cursor: pointer;
+    }
+
+
+    .git:hover {
+        backdrop-filter: blur(10px);
+        background: #0000007f;
+        width: 120px;
+        cursor: pointer;
+    }
+
+
+    .yt:hover {
+        backdrop-filter: blur(10px);
+        background: #fe000079;
+        width: 130px;
+        cursor: pointer;
+    }
+}
+
+/* responsive */
+
+@media only screen and (max-width: 475px) {
+    .social-handles {
+        flex-direction: column;
+        height: fit-content;
+        gap: 30px;
+    }
+
+    .twt,
+    .ins,
+    .git,
+    .yt {
+        backdrop-filter: blur(10px);
+        width: 140px;
+    }
+
+    .brand-name {
+        font-size: 18px;
+        padding-left: 8px;
+    }
+
+}

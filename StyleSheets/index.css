@@ -1,0 +1,249 @@
+/*Home*/
+.profile-image {
+  height: 280px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  filter: drop-shadow(0 0 10px #0069fd);
+  padding-top: 20px;
+  animation: profile-glow 10s alternate 1s infinite;
+}
+
+.profile-image img {
+  height: 100%;
+  transition: 0.5s;
+}
+
+.malaiesun-handle {
+  height: 50px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.malaiesun-handle img {
+  height: 100%;
+  transform: translateY(-30%);
+  transition: 0.5s;
+}
+
+.social-handles {
+  padding-top: 10px;
+}
+
+/*animationsss */
+
+.header {
+  visibility: hidden;
+  animation: fade-in 1s 0.5s forwards;
+  z-index: 9999;
+}
+
+/*responsive*/
+
+@media only screen and (min-width: 475px) {
+  .profile-image {
+    animation: profile 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+  }
+  .social-handles {
+    visibility: hidden;
+    animation: sociallinks 1s 0.5s forwards;
+  }
+  .malaiesun-handle img {
+    visibility: hidden;
+    animation: handle 0.6s 0.6s forwards;
+  }
+}
+
+@media only screen and (max-width: 475px) {
+  .profile-image {
+    height: 200px;
+    margin-bottom: 20px;
+    animation: profile2 1s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+  }
+  .nav-mobile-container {
+    z-index: 9999;
+    visibility: hidden;
+    animation: slide-up 1s 0.5s forwards;
+  }
+  .social-handles {
+    visibility: hidden;
+    animation: sociallinks2 1s 0.51s forwards;
+  }
+  .malaiesun-handle img {
+    visibility: hidden;
+    animation: handle 1s 0.5s forwards;
+  }
+}
+
+/*animations*/
+
+@keyframes profile {
+  0% {
+    transform: scale(3) translateY(20%);
+    filter: drop-shadow(0 0 0px #0069fd);
+  }
+
+  50% {
+    transform: scale(2) translateY(20%);
+    filter: drop-shadow(0 0 0px #0069fd);
+  }
+
+  100% {
+    transform: scale(1) translateY(0);
+    filter: drop-shadow(0 0 5px #0069fd);
+  }
+}
+
+@keyframes profile2 {
+  0% {
+    opacity: 0;
+    transform: scale(1) translateY(100%);
+    filter: drop-shadow(0 0 0px #0069fd);
+  }
+
+  50% {
+    opacity: 0.7;
+    transform: scale(1) translateY(50%);
+    filter: drop-shadow(0 0 0px #0069fd);
+  }
+
+  100% {
+    transform: scale(1) translateY(0);
+    filter: drop-shadow(0 0 5px #0069fd);
+  }
+}
+
+@keyframes handle {
+  0% {
+    visibility: hidden;
+    transform: translateY(100%) rotateX(10deg);
+    opacity: 0;
+    scale: 1.1;
+  }
+
+  100% {
+    visibility: visible;
+    transform: translateY(-30%) rotateX(0deg);
+    opacity: 1;
+    scale: 1;
+  }
+}
+
+@keyframes profile-glow {
+  0% {
+    visibility: visible;
+    filter: drop-shadow(0 0 5px #0069fd);
+  }
+
+  100% {
+    filter: drop-shadow(0 0 15px #0069fd);
+  }
+}
+
+@keyframes sociallinks {
+  0% {
+    visibility: hidden;
+    transform: translateY(250%) rotateX(30deg);
+    opacity: 0;
+    scale: 1.2;
+  }
+
+  100% {
+    visibility: visible;
+    transform: translateY(0) rotateX(0deg);
+    opacity: 1;
+    scale: 1;
+  }
+}
+
+@keyframes sociallinks2 {
+  0% {
+    transform: translateY(30%) rotateX(30deg);
+    visibility: hidden;
+    opacity: 0;
+    scale: 1.2;
+  }
+
+  100% {
+    transform: translateY(0) rotateX(0deg);
+    visibility: visible;
+    opacity: 1;
+    scale: 1;
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    visibility: hidden;
+    opacity: 0;
+  }
+
+  100% {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+@keyframes slide-up {
+  0% {
+    visibility: hidden;
+    transform: translateY(100%);
+    opacity: 0;
+  }
+
+  100% {
+    visibility: visible;
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/*socialhandles*/
+
+@media only screen and (min-width: 475px) {
+  .twt,
+  .ins,
+  .git,
+  .yt {
+    animation: open-close 1.5s 1.2s;
+  }
+
+  .brand-name {
+    animation: open-close-text 1.5s 1.2s;
+  }
+}
+
+@keyframes open-close {
+  30% {
+    backdrop-filter: blur(10px);
+    width: 140px;
+  }
+
+  70% {
+    backdrop-filter: blur(10px);
+    width: 140px;
+  }
+
+  100% {
+    backdrop-filter: blur(10px);
+    width: 40px;
+  }
+}
+
+@keyframes open-close-text {
+  30% {
+    font-size: 18px;
+    padding-left: 8px;
+  }
+
+  70% {
+    font-size: 18px;
+    padding-left: 8px;
+  }
+
+  100% {
+    font-size: 0;
+    padding-left: 0;
+  }
+}
