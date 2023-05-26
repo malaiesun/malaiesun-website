@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Contact</title>
+    <link rel="icon" type="image/x-icon" href="Pictures/favicon.png">
+    <script src="JavaScript/contact.js"></script>
+    <script src="https://kit.fontawesome.com/b356ad9dc8.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="StyleSheets/contact.css">
+    <link rel="stylesheet" type="text/css" href="StyleSheets/general.css">
+    <link rel="stylesheet" type="text/css" href="StyleSheets/header.css">
+    <link rel="stylesheet" type="text/css" href="StyleSheets/navmobile.css">
+    <link rel="stylesheet" type="text/css" href="StyleSheets/socialstyle(static).css">
+</head>
+
+<body>
+
+    <nav class="header">
+        <div class="nav-logo">
+            <a href="index.html"><img class="nav-logo" src="Pictures/malaiesunLOGO.png" alt="malaiesun logo"></a>
+        </div>
+        <div class="nav-menu">
+            <a href="index.html" class="nav-items nav-service">Home</a>
+            <a href="work.html" class="nav-items nav-work">Work</a>
+            <a href="about.html" class="nav-items nav-about">About</a>
+            <a href="service.html" class="nav-items nav-contact">Service</a>
+        </div>
+    </nav>
+    <div class="nav-mobile-container">
+        <nav class="nav-mobile">
+            <a href="index.html" class="nav-mobile-items nav-mobile-work"><span>Home</span><i
+                    class="ri-home-line"></i></a>
+            <a href="work.html" class="nav-mobile-items nav-mobile-work"><span>Work</span><i
+                    class="ri-flask-line"></i></a>
+            <a href="about.html" class="nav-mobile-items nav-mobile-about"><span>About</span><i
+                    class="ri-user-line"></i></a>
+            <a href="service.html" class="nav-mobile-items nav-mobile-service"><span>Service</span><i
+                    class="ri-tools-line"></i></a>
+    </div>
+    </nav>
+    <div class="contact-container">
+        <div class="contact-handles">
+            <img class="me-img" src="Pictures/MELOGO.png" alt="M E Logo">
+            <div class="social-handles">
+                <!-- Twitter Icon -->
+                <div class="icon twt" onclick="openSocialMedia('https://twitter.com/malaiesun')">
+                    <i class="fa-brands fa-twitter"></i>
+                </div>
+
+                <!-- Instagram Icon -->
+                <div class="icon ins" onclick="openSocialMedia('https://instagram.com/malaiesun')">
+                    <i class="fa-brands fa-instagram"></i>
+                </div>
+
+                <!-- GitHub Icon -->
+                <div class="icon git" onclick="openSocialMedia('https://github.com/malaiesun')">
+                    <i class="fa-brands fa-github"></i>
+                </div>
+
+                <!-- YouTube Icon -->
+                <div class="icon yt" onclick="openSocialMedia('https://youtube.com/@malaiesun')">
+                    <i class="fa-brands fa-youtube"></i>
+                </div>
+            </div>
+            <script>
+                function openSocialMedia(url) {
+                    window.open(url, '_blank');
+                }
+            </script>
+        </div>
+        <form id="myForm" class="contact-form">
+            <span class="contact-form-title">
+                Get in touch
+            </span>
+
+            <div class="contact-input validate-input" data-validate="Name is required">
+                <input class="input1" type="text" name="name" id="name" placeholder="Name">
+            </div>
+
+            <div class="contact-input validate-input" data-validate="Valid email is required: ex@abc.xyz">
+                <input class="input1" type="text" name="email" id="email" placeholder="Email">
+            </div>
+
+            <div class="contact-input validate-input" data-validate="Message is required">
+                <textarea class="input1 contact-message" name="message" id="message" placeholder="Message"></textarea>
+            </div>
+
+            <div class="container-contact-form-btn">
+                <button class="contact-form-btn">
+                    <span>
+                        Send
+                        <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                    </span>
+                </button>
+            </div>
+        </form>
+    </div>
+    <script type="text/javascript" src="JavaScript/vanilla-tilt.js"></script>
+    <script type="text/javascript">
+        VanillaTilt.init(document.querySelector(".me-img"), {
+            max: 'ontouchstart' in window ? 0 : (window.innerWidth >= 1024 || window.innerHeight >= 1024 ? 30 : 0),
+            speed: 1000,
+            scale: 1.05,
+            //glare: 'ontouchstart' in window ? false : (window.innerWidth >= 1024 && window.innerHeight >= 560 ? true : false),
+            "max-glare": 0.3,
+        });
+    </script>
+</body>
+
+</html>

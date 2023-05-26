@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Home</title>
+    <link rel="icon" type="image/x-icon" href="Pictures/favicon.png">
+    <script src="https://kit.fontawesome.com/b356ad9dc8.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="StyleSheets/index.css">
+    <link rel="stylesheet" type="text/css" href="StyleSheets/general.css">
+    <link rel="stylesheet" type="text/css" href="StyleSheets/header.css">
+    <link rel="stylesheet" type="text/css" href="StyleSheets/navmobile.css">
+    <link rel="stylesheet" type="text/css" href="StyleSheets/socialstyle.css">
+</head>
+
+<body>
+
+    <nav class="header">
+        <div class="nav-logo">
+            <a href="index.html"><img class="nav-logo" src="Pictures/malaiesunLOGO.png" alt="malaiesun logo"></a>
+        </div>
+        <div class="nav-menu">
+            <a href="work.html" class="nav-items nav-work">Work</a>
+            <a href="about.html" class="nav-items nav-about">About</a>
+            <a href="service.html" class="nav-items nav-service">Service</a>
+            <a href="contact.html" class="nav-items nav-contact">Contact</a>
+        </div>
+    </nav>
+    <div class="nav-mobile-container">
+        <nav class="nav-mobile">
+            <a href="work.html" class="nav-mobile-items nav-mobile-work"><span>Work</span><i
+                    class="ri-flask-line"></i></a>
+            <a href="about.html" class="nav-mobile-items nav-mobile-about"><span>About</span><i
+                    class="ri-user-line"></i></a>
+            <a href="service.html" class="nav-mobile-items nav-mobile-service"><span>Service</span><i
+                    class="ri-tools-line"></i></a>
+            <a href="contact.html" class="nav-mobile-items nav-mobile-contact"><span>Contact</span><i
+                    class="ri-mail-line"></i></a>
+    </div>
+    </nav>
+
+    <section class="home">
+        <div class="home-content">
+            <div class="profile-image">
+                <img class="profile-img" src="Pictures/profilePIC.png" alt="Picture of malaiesun">
+            </div>
+            <div class="malaiesun-handle">
+                <img src="Pictures/malaiesunHANDLE.png" alt="@malaiesun social media handle">
+            </div>
+            <div class="social-handles">
+                <!-- Twitter Icon -->
+                <div class="icon twt" onclick="openSocialMedia('https://twitter.com/malaiesun')">
+                    <i class="fa-brands fa-twitter"></i>
+                    <span class="brand-name">Twitter</span>
+                </div>
+
+                <!-- Instagram Icon -->
+                <div class="icon ins" onclick="openSocialMedia('https://instagram.com/malaiesun')">
+                    <i class="fa-brands fa-instagram"></i>
+                    <span class="brand-name">Instagram</span>
+                </div>
+
+                <!-- GitHub Icon -->
+                <div class="icon git" onclick="openSocialMedia('https://github.com/malaiesun')">
+                    <i class="fa-brands fa-github"></i>
+                    <span class="brand-name">GitHub</span>
+                </div>
+
+                <!-- YouTube Icon -->
+                <div class="icon yt" onclick="openSocialMedia('https://youtube.com/@malaiesun')">
+                    <i class="fa-brands fa-youtube"></i>
+                    <span class="brand-name">YouTube</span>
+                </div>
+            </div>
+
+        </div>
+        <script>
+            function openSocialMedia(url) {
+                window.open(url, '_blank');
+            }
+        </script>
+    </section>
+    <script type="text/javascript" src="JavaScript/vanilla-tilt.js"></script>
+    <script type="text/javascript">
+        VanillaTilt.init(document.querySelectorAll(".profile-img"), {
+            max: 'ontouchstart' in window ? 0 : (window.innerWidth >= 1024 || window.innerHeight >= 1024 ? 15 : 0),
+            speed: 1000,
+            //glare: 'ontouchstart' in window ? false : (window.innerWidth >= 1024 && window.innerHeight >= 560 ? true : false),
+
+        });
+    </script>
+</body>
+
+</html>

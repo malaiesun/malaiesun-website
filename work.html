@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Work</title>
+    <script src="JavaScript/work.js"></script>
+    <link rel="icon" type="image/x-icon" href="Pictures/favicon.png">
+    <script src="https://kit.fontawesome.com/b356ad9dc8.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="StyleSheets/general.css">
+    <link rel="stylesheet" type="text/css" href="StyleSheets/header.css">
+    <link rel="stylesheet" type="text/css" href="StyleSheets/navmobile.css">
+    <link rel="stylesheet" type="text/css" href="StyleSheets/searchBar.css">
+    <link rel="stylesheet" type="text/css" href="StyleSheets/work.css">
+
+</head>
+
+<body>
+
+    <nav class="header">
+        <div class="nav-logo">
+            <a href="index.html"><img class="nav-logo" src="Pictures/malaiesunLOGO.png" alt="malaiesun logo"></a>
+        </div>
+        <div class="nav-menu">
+            <div class="flex-container">
+                <a id="toggleLink" href="#archive">Archive</a> <!--currently hidden, to be added-->
+            </div>
+            <a href="index.html" class="nav-items nav-home">Home</a> <!--needs to be removed-->
+            <a href="about.html" class="nav-items nav-about">About</a>
+            <a href="service.html" class="nav-items nav-service">Service</a>
+            <a href="contact.html" class="nav-items nav-contact">Contact</a>
+        </div>
+    </nav>
+    <div class="nav-mobile-container">
+        <nav class="nav-mobile">
+            <a href="index.html" class="nav-mobile-items nav-mobile-work"><span>Home</span><i
+                    class="ri-home-line"></i></a>
+            <a href="about.html" class="nav-mobile-items nav-mobile-about"><span>About</span><i
+                    class="ri-user-line"></i></a>
+            <a href="service.html" class="nav-mobile-items nav-mobile-service"><span>Service</span><i
+                    class="ri-tools-line"></i></a>
+            <a href="contact.html" class="nav-mobile-items nav-mobile-contact"><span>Contact</span><i
+                    class="ri-mail-line"></i></a>
+    </div>
+    </nav>
+    </div>
+    <section id="featured">
+        <div class="featured-header">
+            <h1>Featured Projects</h1>
+            <div class="search-container">
+                <input class="featured-searchBox" type="search" id="searchBox">
+                <span>I</span>
+            </div>
+            <script>
+                const searchBox = document.getElementById('searchBox');
+
+                searchBox.addEventListener('blur', () => {
+                    searchBox.value = ''; // Clear the text
+                });
+            </script>
+        </div>
+        <div class="featured-projects-container">
+            <div class="featured-projects">
+                <div class="no-results-found" id="noResultsMessage" style="display: none;">No results found</div>
+                <a href="#">
+                    <div class="featured-card">
+                        <div class="featured-card-imgholder">
+                            <img src="Pictures/Project Thumbnails/DesktopFridge.jpg"
+                                alt="DIY Desktop Fridge picture">
+                        </div>
+                        <div class="featured-card-content">
+                            <h2>DIY Desktop Fridge</h2>
+                            <p class="featured-description">Build your own desktop fridge project under $15 that runs on
+                                12V DC and uses a peltier module that can cool items up to 25°C.</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="#">
+                    <div class="featured-card">
+                        <div class="featured-card-imgholder">
+                            <img src="Pictures/Project Thumbnails/Unavailable.jpg"
+                                alt="DIY Desktop Fridge picture">
+                        </div>
+                        <div class="featured-card-content">
+                            <h2>Unavailable</h2>
+                        </div>
+                    </div>
+                </a>
+                <a href="#">
+                    <div class="featured-card">
+                        <div class="featured-card-imgholder">
+                            <img src="Pictures/Project Thumbnails/Unavailable.jpg"
+                                alt="DIY Desktop Fridge picture">
+                        </div>
+                        <div class="featured-card-content">
+                            <h2>Unavailable</h2>
+                        </div>
+                    </div>
+                </a>
+                <a href="#">
+                    <div class="featured-card">
+                        <div class="featured-card-imgholder">
+                            <img src="Pictures/Project Thumbnails/Unavailable.jpg"
+                                alt="DIY Desktop Fridge picture">
+                        </div>
+                        <div class="featured-card-content">
+                            <h2>Unavailable</h2>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+    </section>
+
+    <section class="arch" id="archive">
+        <div class="featured-header">
+            <h1>Archive</h1>
+            <div class="search-container">
+                <input class="featured-searchBox" type="search" id="searchBox2" placeholder="">
+                <span>I</span>
+            </div>
+            <script>
+                const searchBox2 = document.getElementById('searchBox2');
+
+                searchBox2.addEventListener('blur', () => {
+                    searchBox2.value = ''; // Clear the text
+                });
+            </script>
+        </div>
+    </section>
+</body>
+
+</html>

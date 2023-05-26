@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>About ME</title>
+    <link rel="icon" type="image/x-icon" href="Pictures/favicon.png">
+    <script src="https://kit.fontawesome.com/b356ad9dc8.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="StyleSheets/about.css">
+    <link rel="stylesheet" type="text/css" href="StyleSheets/general.css">
+    <link rel="stylesheet" type="text/css" href="StyleSheets/header.css">
+    <link rel="stylesheet" type="text/css" href="StyleSheets/navmobile.css">
+    <link rel="stylesheet" type="text/css" href="StyleSheets/socialstyle(static).css">
+</head>
+
+<body>
+    <div class="contain">
+
+        <nav class="header">
+            <div class="nav-logo">
+                <a href="index.html"><img class="nav-logo" src="Pictures/malaiesunLOGO.png" alt="malaiesun logo"></a>
+            </div>
+            <div class="nav-menu">
+                <a href="index.html" class="nav-items nav-service">Home</a>
+                <a href="work.html" class="nav-items nav-work">Work</a>
+                <a href="service.html" class="nav-items nav-service">Service</a>
+                <a href="contact.html" class="nav-items nav-contact">Contact</a>
+            </div>
+        </nav>
+        <div class="nav-mobile-container">
+            <nav class="nav-mobile">
+                <a href="index.html" class="nav-mobile-items nav-mobile-work"><span>Home</span><i
+                        class="ri-home-line"></i></a>
+                <a href="work.html" class="nav-mobile-items nav-mobile-work"><span>Work</span><i
+                        class="ri-flask-line"></i></a>
+                <a href="service.html" class="nav-mobile-items nav-mobile-service"><span>Service</span><i
+                        class="ri-tools-line"></i></a>
+                <a href="contact.html" class="nav-mobile-items nav-mobile-contact"><span>Contact</span><i
+                        class="ri-mail-line"></i></a>
+        </div>
+        </nav>
+        <div class="container-container">
+            <div class="about-container">
+                <div class="about-content">
+                    <h1 class="about-title">About ME</h1>
+                    <p class="about-description">I'm Malaiesun, a passionate individual fascinated by robotics,
+                        technology,
+                        and the digital world. Since a young age, I've been captivated by the creative possibilities
+                        that
+                        emerge from combining science and engineering. From Arduino and Raspberry Pi to microcontrollers
+                        and
+                        IoT, I've delved into these realms, participating in robotics competitions and science expos,
+                        where
+                        I showcase my skills and innovative projects. Whether designing autonomous robots or merging the
+                        physical and digital worlds, I constantly push boundaries to bring my imagination to life.
+                        Alongside
+                        robotics, I enjoy coding and customizing technology, crafting elegant lines of code to solve
+                        problems and create impactful applications. Personalizing gadgets and exploring UI/UX design
+                        with
+                        sleek interfaces and immersive animations also excite me.</p>
+                </div>
+                <div class="about-image">
+                    <img src="Pictures/profilePIC.png" alt="Picture of malaiesun">
+                </div>
+                <script>
+                    function openSocialMedia(url) {
+                        window.open(url, '_blank');
+                    }
+                </script>
+            </div>
+        </div>
+
+
+    </div>
+    <script type="text/javascript" src="JavaScript/vanilla-tilt.js"></script>
+    <script type="text/javascript">
+        VanillaTilt.init(document.querySelector(".about-container"), {
+            max: 'ontouchstart' in window ? 0 : (window.innerWidth >= 1024 || window.innerHeight >= 1024 ? 10 : 0),
+            speed: 1000,
+            scale: 1.05,
+            //glare: 'ontouchstart' in window ? false : (window.innerWidth >= 1024 && window.innerHeight >= 560 ? true : false),
+            "max-glare": 0.3,
+        });
+    </script>
+</body>
+<html>
