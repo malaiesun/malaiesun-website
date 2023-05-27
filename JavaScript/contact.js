@@ -74,7 +74,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function showSuccess() {
     submitButton.innerHTML = `<span><i class="fas fa-check"></i></span>`;
-    contactTitle.innerHTML = `<span>Submitted Sucessfully</span>`;
+    contactTitle.innerHTML = `<span>Sent Sucessfully</span>`;
     form.classList.add("submitted-form");
     submitButton.classList.add("success");
     submitButton.disabled = true;
