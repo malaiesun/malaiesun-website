@@ -1,0 +1,41 @@
+body {
+    overflow: hidden;
+  }
+  
+  .error {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 80svh;
+    text-align: center;
+    color: #fff; 
+  }
+  
+  .error h1 {
+    font-size: 72px;
+    margin-bottom: 10px;
+  }
+  .error h2 {
+    font-size: 20px;
+  }
+  
+  .error h3 {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .error a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #33333389;
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    border-radius: 25px;
+  }
+  
+  .error a:hover {
+    background-color: #55555571;
+  }
+  
