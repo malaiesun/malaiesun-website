@@ -61,7 +61,7 @@
     margin-bottom: 20px;
     animation: profile2 1s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
   }
-  .nav-mobile-container {
+  .nav-mobile {
     z-index: 9999;
     visibility: hidden;
     animation: slide-up 1s 0.5s forwards;
