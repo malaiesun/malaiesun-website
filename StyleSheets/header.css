@@ -39,6 +39,7 @@
 }
 
 .nav-items {
+  font-size: 16px;
   color: #ffffff;
   text-decoration: none;
   font-weight: 700;
@@ -46,9 +47,12 @@
 }
 .nav-items:hover {
   color: #0069fd;
-  font-size: 125%;
+  font-size: 20px;
 }
-
+.nav-items:active {
+  color: #0069fd;
+  font-size: 18px;
+}
 @media only screen and (max-width: 475px) {
   .header {
     display: none;

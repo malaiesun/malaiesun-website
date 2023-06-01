@@ -34,11 +34,12 @@ body {
   vertical-align: top;
   width: 100%;
   color: white;
+  padding-top: 15px;
   padding-left: 20px;
 }
 .video-details h2 {
   font-size: 30px;
-  padding: 2.5vw 0;
+  padding-bottom: 1vw;
 }
 .materials-required {
   width: 70%;
@@ -95,6 +96,7 @@ body {
   margin-bottom: 10px;
 }
 .circuit {
+  position: relative;
   width: 50%;
   margin: 0 auto;
   text-align: center;
@@ -106,8 +108,57 @@ body {
 }
 .circuit img {
   width: 100%;
+  cursor: pointer;
+  transition: 0.4s;
+}
+.circuit img:hover {
+  scale: 1.01;
+}
+.circuit img:active {
+  scale: 1;
 }
 
+#modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.3s ease;
+}
+
+#modal.open {
+  opacity: 1;
+  backdrop-filter: blur(10px);
+  pointer-events: auto;
+  z-index: 10000;
+}
+
+#modal img {
+  max-width: 95%;
+  max-height: 80%;
+  scale: 0.8;
+  transition: 0.3s;
+}
+
+#modal.open img {
+  scale: 1;
+}
+
+#close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 40px;
+}
 /* Animations */
 
 @keyframes slide-left {

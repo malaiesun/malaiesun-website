@@ -59,13 +59,13 @@
         <ul>
             <li><img src="../Pictures/Projects/diy-desktop-fridge/Materials/peltier.png" alt="Peltier module"> 12706
                 Peltier Module </li>
-            <li><img src="../Pictures/Projects/diy-desktop-fridge/Materials/fan.png" alt=""> 12V CPU Fan (x2)</li>
-            <li><img src="../Pictures/Projects/diy-desktop-fridge/Materials/light.png" alt=""> 12V LED Strip </li>
-            <li><img src="../Pictures/Projects/diy-desktop-fridge/Materials/smps.png" alt=""> 12V 10Amp Power Supply
+            <li><img src="../Pictures/Projects/diy-desktop-fridge/Materials/fan.png" alt="12V CPU Fan"> 12V CPU Fan (x2)</li>
+            <li><img src="../Pictures/Projects/diy-desktop-fridge/Materials/light.png" alt="12V LED Strip"> 12V LED Strip </li>
+            <li><img src="../Pictures/Projects/diy-desktop-fridge/Materials/smps.png" alt="12V 10Amp Power Supply"> 12V 10Amp Power Supply
             </li>
-            <li><img src="../Pictures/Projects/diy-desktop-fridge/Materials/heatsink.png" alt=""> Heat Sink (x2)</li>
-            <li><img src="../Pictures/Projects/diy-desktop-fridge/Materials/box.png" alt=""> Thermocol ice box</li>
-            <li><img src="../Pictures/Projects/diy-desktop-fridge/Materials/thermalpaste.png" alt=""> Thermal paste</li>
+            <li><img src="../Pictures/Projects/diy-desktop-fridge/Materials/heatsink.png" alt="Heat Sink (x2)"> Heat Sink (x2)</li>
+            <li><img src="../Pictures/Projects/diy-desktop-fridge/Materials/box.png" alt="Thermocol ice box"> Thermocol ice box</li>
+            <li><img src="../Pictures/Projects/diy-desktop-fridge/Materials/thermalpaste.png" alt="Thermal paste"> Thermal paste</li>
         </ul>
     </div>
     <div class="instructions">
@@ -91,8 +91,32 @@
     </div>
     <div class="circuit">
         <h2>Circuit Schematics</h2>
-        <img src="../Pictures/Projects/diy-desktop-fridge/Circut Diagram.jpg" alt="">
+        <img Id="circuit-img" src="../Pictures/Projects/diy-desktop-fridge/Circut%20Diagram.jpg" alt="Circuit Diagram"
+            onclick="openDialog()">
     </div>
+
+    <dialog id="modal">
+        <span id="close-button" onclick="closeDialog()">&times;</span>
+        <img src="../Pictures/Projects/diy-desktop-fridge/Circut%20Diagram.jpg" alt="Circuit Diagram">
+    </dialog>
+
+    <script>
+        function openDialog() {
+            var dialog = document.getElementById("modal");
+            var circuitImg = document.getElementById("circuit-img");
+
+            circuitImg.style.opacity = 0;
+            dialog.classList.add("open");
+        }
+
+        function closeDialog() {
+            var dialog = document.getElementById("modal");
+            var circuitImg = document.getElementById("circuit-img");
+
+            circuitImg.style.opacity = 1;
+            dialog.classList.remove("open");
+        }
+    </script>
 </body>
 
 </html>
