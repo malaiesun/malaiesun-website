@@ -8,6 +8,7 @@
   padding: 0 40px;
   animation: fade-in 0.5s forwards;
 }
+
 h1 {
   color: white;
   padding-top: 20px;
@@ -22,11 +23,11 @@ h1 {
   justify-content: space-evenly;
   align-items: center;
   width: 100%;
-  overflow: auto;
+  overflow-x: auto; 
+  -webkit-overflow-scrolling: touch; 
+  scroll-behavior: smooth;
   transition: 0.3s;
 }
-
-/* .not-searched-container{} */
 
 .featured-projects {
   display: flex;
@@ -40,6 +41,7 @@ h1 {
   padding: 10px;
   overflow: hidden;
   overscroll-behavior-inline: contain;
+  scrollbar-width: none;
   transition: 0.3s;
   animation: fade-in 0.5s forwards;
 }
@@ -54,22 +56,26 @@ h1 {
   transition: 0.3s;
   position: relative;
 }
+
 .featured-card:hover {
   border-radius: 15px;
   transform: scale(1.01);
   margin-left: 100px;
   z-index: 1;
 }
+
 .not-searched {
   transform: scaleX(0);
   max-width: 0;
   margin: 0px;
   transition: 0.3s;
 }
+
 .not-searched .featured-card-imgholder {
   opacity: 0;
   transition: 0.3;
 }
+
 .not-searched .featured-card-content {
   opacity: 0;
   transition: 0.3s;
@@ -78,6 +84,7 @@ h1 {
 .highlighted {
   background-color: yellow;
 }
+
 .featured-card-imgholder {
   overflow: hidden;
   border-radius: 20px;
@@ -136,7 +143,7 @@ h2 {
 
 .no-results-found-show {
   transform: scale(1);
-  max-width: 445;
+  max-width: 445px;
   opacity: 1;
   z-index: 100;
 }
@@ -161,7 +168,6 @@ h2 {
   overflow: hidden;
 }
 
-
 .flex-container {
   display: flex;
   align-items: center;
@@ -181,7 +187,14 @@ h2 {
 }
 
 .featured-projects::-webkit-scrollbar {
-  height: 0px;
+  display: none;
+}
+
+@media (hover: none) {
+  .featured-card:hover {
+    transform: none;
+    margin-left: 0;
+  }
 }
 
 @media only screen and (max-width: 475px) {
@@ -220,6 +233,7 @@ h2 {
   .featured-projects {
     height: fit-content;
     background-color: rgba(30, 30, 30, 0.772);
+    overflow-x:auto;
   }
 
   .featured-card-content {
@@ -244,6 +258,7 @@ h2 {
 }
 
 /*need to be finished*/
+
 .arch {
   height: 0px;
   background-color: rgb(115, 0, 255);
@@ -253,6 +268,7 @@ h2 {
   display: block;
   visibility: hidden;
 }
+
 .flex-container {
   display: none;
   visibility: hidden;
