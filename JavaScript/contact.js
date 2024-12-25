@@ -73,7 +73,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function showSuccess() {
-    submitButton.innerHTML = `<span><i class="fas fa-check"></i></span>`;
+    submitButton.innerHTML = `<span><i class="ri-check-fill"></i></span>`;
     contactTitle.innerHTML = `<span>Sent Sucessfully</span>`;
     form.classList.add("submitted-form");
     submitButton.classList.add("success");

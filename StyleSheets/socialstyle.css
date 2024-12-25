@@ -1,5 +1,4 @@
-/*social icon*/
-
+/* Social icon */
 .social-handles {
     width: 100%;
     height: 30px;
@@ -33,9 +32,10 @@
     transition: font-size .3s;
 }
 
-
-.icon .fa-brands {
+/* Update this to target Remix Icons */
+.icon i {
     color: #ffffff;
+    font-size: 24px; /* Adjusted for Remix Icons */
 }
 
 @media only screen and (min-width: 475px) {
@@ -53,7 +53,6 @@
         cursor: pointer;
     }
 
-
     .git:hover {
         backdrop-filter: blur(10px);
         background: #0000007f;
@@ -61,22 +60,20 @@
         cursor: pointer;
     }
 
-
     .yt:hover {
         backdrop-filter: blur(10px);
         background: #fe000079;
         width: 130px;
         cursor: pointer;
     }
+
     .icon:hover .brand-name {
         padding-left: 8px;
         font-size: 18px;
     }
-    
 }
 
-/* responsive */
-
+/* Responsive */
 @media only screen and (max-width: 475px) {
     .twt,
     .ins,
@@ -90,5 +87,4 @@
     .brand-name {
         font-size: 0px;
     }
-
 }

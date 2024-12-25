@@ -110,9 +110,10 @@
 }
 
 .submitted-form .contact-form-btn {
-  transform: translateY(-400%);
-  padding: 10px 13px;
+  transform: translateY(-320%);
+  padding: 5px 8px;
   scale: 1.5;
+  font-size: 30px;
   background-color: green;
   pointer-events: none;
 }
