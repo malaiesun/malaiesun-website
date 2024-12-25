@@ -181,42 +181,138 @@ body {
   }
 }
 
-/*responsive*/
-
+/* Responsive adjustments for screens below 1000px */
 @media only screen and (max-width: 1000px) {
   .video-container {
-    width: 95%;
+    width: 95%; /* Makes the video container wider on smaller screens */
   }
+
   .video-details {
     width: 0;
-    visibility: hidden;
+    visibility: hidden; /* Hides video details on smaller screens */
     padding: 0 0;
   }
+
   .materials-required {
     padding: 10px;
-    width: 90%;
+    width: 90%; /* Makes the materials section take up more space */
   }
+
   .materials-required li {
-    font-size: 14px;
+    font-size: 14px; /* Smaller font size for list items */
   }
+
   .materials-required img {
-    width: 40px;
+    width: 40px; /* Smaller images for materials */
   }
+
   .instructions {
-    width: 80%;
+    width: 80%; /* Slightly smaller width for instructions */
   }
+
   .instructions h2 {
-    text-align: center;
+    text-align: center; /* Centers the instructions header */
   }
+
   .instructions ol {
-    padding-left: 0px;
+    padding-left: 0px; /* Adjusts padding for smaller screens */
   }
+
   .circuit {
-    width: 80%;
+    width: 80%; /* Makes the circuit image take up more space */
   }
 }
+
+/* Animation for very small screens below 475px */
 @media only screen and (max-width: 475px) {
   body {
     animation: slide-left 0.5s;
+  }
+}
+
+/* Keyframes for sliding animation */
+@keyframes slide-left {
+  0% {
+    opacity: 0;
+    transform: translateX(50%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}
+
+
+/*related*/
+
+/* Container to hold both main content and related projects */
+.content-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 20px;
+}
+
+/* Main content section including video and materials */
+.main-content {
+  width: 70%; /* Main content takes up most of the width */
+}
+
+/* Related Projects section */
+.related-projects {
+  width: 28%;
+  background-color: #333;
+  padding: 20px;
+  color: #cecece;
+  border-radius: 8px;
+}
+
+.related-projects h2 {
+  font-size: 24px;
+  color: white;
+  margin-bottom: 15px;
+}
+
+.related-project {
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.related-project-img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.related-project h3 {
+  font-size: 18px;
+  color: white;
+  margin-bottom: 5px;
+}
+
+.related-project p {
+  font-size: 14px;
+  color: #cecece;
+  margin-bottom: 5px;
+}
+
+.related-project-link {
+  color: #1E90FF;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+/* Responsive layout for mobile */
+@media only screen and (max-width: 1000px) {
+  .content-container {
+    flex-direction: column;
+  }
+
+  .related-projects {
+    width: 100%; /* Full width on small screens */
+    margin-top: 20px;
   }
 }

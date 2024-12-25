@@ -41,6 +41,7 @@
 }
 .featured-searchBox:focus {
   border-radius: 50px;
+  filter: drop-shadow(0 0 30px #0400ff) drop-shadow(0 0 50px #007bff92);
   width: 300px;
   color: #ffffff;
   background-color: #ffffff;

@@ -1,9 +1,15 @@
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', async () => {
+  // Elements
   const toggleLink = document.getElementById('toggleLink');
   const featuredSection = document.getElementById('featured');
   const archiveSection = document.getElementById('archive');
+  const searchBox = document.getElementById('searchBox');
+  const featuredProjectsContainer = document.getElementById('featured-projects-container');
+  const noResultsMessage = document.querySelector('.no-results-found');
+  const featuredProjects = document.querySelector('.featured-projects');
 
-  toggleLink.addEventListener('click', () => {
+  // Toggle Link Logic
+  const toggleLinkHandler = () => {
     if (toggleLink.textContent === 'Archive') {
       toggleLink.setAttribute('href', '#archive');
       toggleLink.textContent = 'Featured';
@@ -11,8 +17,11 @@ document.addEventListener('DOMContentLoaded', () => {
       toggleLink.setAttribute('href', '#featured');
       toggleLink.textContent = 'Archive';
     }
-  });
+  };
 
+  toggleLink.addEventListener('click', toggleLinkHandler);
+
+  // Intersection Observer
   const observerOptions = {
     root: null,
     rootMargin: '0px',
@@ -21,10 +30,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
-      if (entry.target === featuredSection && entry.isIntersecting && toggleLink.textContent !== 'Archive') {
+      if (entry.target === featuredSection && entry.isIntersecting) {
         toggleLink.setAttribute('href', '#archive');
         toggleLink.textContent = 'Archive';
-      } else if (entry.target === archiveSection && entry.isIntersecting && toggleLink.textContent !== 'Featured') {
+      } else if (entry.target === archiveSection && entry.isIntersecting) {
         toggleLink.setAttribute('href', '#featured');
         toggleLink.textContent = 'Featured';
       }
@@ -34,71 +43,140 @@ document.addEventListener('DOMContentLoaded', () => {
   observer.observe(featuredSection);
   observer.observe(archiveSection);
 
-  // Scroll Event Listener
-  window.addEventListener('scroll', () => {
-    const scrollPosition = window.scrollY;
-    const featuredSectionOffset = featuredSection.offsetTop ; 
-    const archiveSectionOffset = archiveSection.offsetTop - 400 ; 
-    const featuredSectionHeight = featuredSection.offsetHeight;
-
-    if (
-      scrollPosition >= featuredSectionOffset &&
-      scrollPosition < archiveSectionOffset  &&
-      toggleLink.textContent !== 'Archive'
-    ) {
-      toggleLink.setAttribute('href', '#archive');
-      toggleLink.textContent = 'Archive';
-    } else if (
-      scrollPosition >= archiveSectionOffset  &&
-      scrollPosition < archiveSectionOffset + featuredSectionHeight &&
-      toggleLink.textContent !== 'Featured'
-    ) {
-      toggleLink.setAttribute('href', '#featured');
-      toggleLink.textContent = 'Featured';
+  // Check if an image exists
+  async function checkImageExists(imageUrl) {
+    try {
+      const response = await fetch(imageUrl, { method: 'HEAD' });
+      return response.ok;
+    } catch (error) {
+      return false;
     }
-  });
-});
+  }
 
-//scroll flexbox
+  // Fetch Featured Projects Data
+  async function fetchFeaturedProjects() {
+    try {
+      const response = await fetch('projects.json');
+      const data = await response.json();
+      return data;
+    } catch (error) {
+      console.error('Error fetching featured projects:', error);
+      return [];
+    }
+  }
 
-document.addEventListener('DOMContentLoaded', function() {
-  document.querySelector('.featured-projects').addEventListener('wheel', function(event) {
-    event.preventDefault();
-    var container = event.currentTarget;
-    container.scrollLeft += event.deltaY;
-  });
-});
+  // Fetch Archive Projects Data
+  async function fetchArchiveProjects() {
+    try {
+      const response = await fetch('archprojects.json');
+      const data = await response.json();
+      return data;
+    } catch (error) {
+      console.error('Error fetching archive projects:', error);
+      return [];
+    }
+  }
 
-//search flexbox
-document.addEventListener('DOMContentLoaded', () => {
-  const searchBox = document.getElementById('searchBox');
-  const featuredCards = document.querySelectorAll('.featured-card');
-  const noResultsMessage = document.getElementById('noResultsMessage');
-  const originalCardStyles = [];
+  // Generate Project Cards for Featured Projects
+  async function generateFeaturedProjects() {
+    const projects = await fetchFeaturedProjects();
 
-  featuredCards.forEach(card => {
-    originalCardStyles.push(card.style.display);
-  });
+    if (!projects.length) {
+      featuredProjects.innerHTML = '<p>No projects found.</p>';
+      return;
+    }
 
+    for (const project of projects) {
+      // Fallback for empty or missing title
+      project.title = project.title.trim() ? project.title : "Unavailable";
+
+      // Check if the thumbnail image exists, if not set fallback image
+      const imageExists = await checkImageExists(project.thumbnail);
+      if (!imageExists) {
+        project.thumbnail = "Pictures/Project Thumbnails/Unavailable.jpg";
+      }
+
+      const projectCard = document.createElement('div');
+      projectCard.classList.add('featured-card');
+
+  
+      const projectLink = document.createElement('a');
+      projectLink.href = project.link; 
+      projectLink.innerHTML = `
+        <div class="featured-card-imgholder">
+          <img src="${project.thumbnail}" alt="${project.title}">
+        </div>
+        <div class="featured-card-content">
+          <h2>${project.title}</h2>
+          <p class="featured-description">${project.description}</p>
+        </div>
+      `;
+
+      projectCard.appendChild(projectLink); 
+      featuredProjects.appendChild(projectCard);
+    }
+  }
+
+  // Generate Project Cards for Archive Projects
+  async function generateArchiveProjects() {
+    const projects = await fetchArchiveProjects();
+
+    if (!projects.length) {
+      archiveSection.innerHTML = '<p>No archive projects found.</p>';
+      return;
+    }
+
+    projects.forEach(project => {
+      // Fallback for empty or missing title
+      project.title = project.title.trim() ? project.title : "Unavailable";
+
+      const projectCard = document.createElement('div');
+      projectCard.classList.add('archive-card');
+
+  
+      const projectLink = document.createElement('a');
+      projectLink.href = project.link; 
+
+      projectLink.innerHTML = `
+        <div class="archive-card-imgholder">
+          <img src="${project.thumbnail}" alt="${project.title}">
+        </div>
+        <div class="archive-card-content">
+          <h2>${project.title}</h2>
+          <p class="archive-description">${project.description}</p>
+        </div>
+      `;
+
+      projectCard.appendChild(projectLink); 
+      archiveSection.appendChild(projectCard);
+    });
+  }
+
+  // Call generateFeaturedProjects and generateArchiveProjects
+  generateFeaturedProjects();
+  generateArchiveProjects();
+
+  // Search Filtering
   const filterCards = searchTerm => {
-    let matchFound = false;
+    const featuredCards = document.querySelectorAll('.featured-card');
+    let noResults = true;
 
-    featuredCards.forEach((card, index) => {
-      const heading = card.querySelector('h2');
-      const cardText = heading.textContent.toLowerCase().replace(/\s+/g, '');
-
-      if (cardText.includes(searchTerm)) {
-        card.style.display = originalCardStyles[index];
-        matchFound = true;
+    featuredCards.forEach(card => {
+      const heading = card.querySelector('h2').textContent.toLowerCase().replace(/\s+/g, '');
+      if (heading.includes(searchTerm)) {
+        card.classList.remove('not-searched');
+        noResults = false;
       } else {
-        card.style.display = 'none';
+        card.classList.add('not-searched');
       }
     });
 
-    if (matchFound) {
-      noResultsMessage.style.display = 'none';
+    if (noResults) {
+      noResultsMessage.classList.add('no-results-found-show');
+      featuredProjectsContainer.classList.add('not-searched-container');
     } else {
-      noResultsMessage.style.display = 'block';
+      noResultsMessage.classList.remove('no-results-found-show');
+      featuredProjectsContainer.classList.remove('not-searched-container');
     }
   };
 
@@ -109,10 +187,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
   searchBox.addEventListener('blur', () => {
     if (searchBox.value === '') {
-      featuredCards.forEach((card, index) => {
-        card.style.display = originalCardStyles[index];
-      });
-      noResultsMessage.style.display = 'none';
+      const featuredCards = document.querySelectorAll('.featured-card');
+      featuredCards.forEach(card => card.classList.remove('not-searched'));
+      noResultsMessage.classList.remove('no-results-found-show');
     }
+  });
+
+  // Horizontal Scroll for Featured Projects
+  featuredProjects.addEventListener('wheel', event => {
+    event.preventDefault();
+    event.currentTarget.scrollLeft += event.deltaY;
   });
 });

@@ -1,0 +1,34 @@
+[
+  {
+      "title": "DIY Desktop Fridge",
+      "description": "RGB Build your own desktop fridge under $15 that runs on 12V DC and uses a peltier module that can cool items up to 25°C.",
+      "thumbnail": "Pictures/Project Thumbnails/DesktopFridge.jpg",
+      "link": "./work/diy-desktop-fridge",
+      "date": "2024-11-05",
+      "tags": "RGB, cooling, DIY, peltier, fridge"
+  },
+  {
+      "title": "RGB LED Controller",
+      "description": "A project to control RGB LEDs using an ESP32 with color changing and lighting effects.",
+      "thumbnail": "images/rgb_led_controller.jpg",
+      "link": "#rgb",
+      "date": "2024-11-05",
+      "tags": "RGB, ESP32, LEDs, lighting"
+  },
+  {
+      "title": "3D Printed Robotic Arm",
+      "description": "A robotic arm built using 3D printed parts and controlled via a microcontroller for precise movements.",
+      "thumbnail": "images/robotic_arm.jpg",
+      "link": "#3d",
+      "date": "2024-11-05",
+      "tags": "3D printing, robotic arm, microcontroller, robotics"
+  },
+  {
+      "title": "Automated Plant Watering System",
+      "description": "A smart watering system for plants, powered by Arduino and sensors to maintain optimal soil moisture.",
+      "thumbnail": "images/plant_watering_system.jpg",
+      "link": "#aut",
+      "date": "2024-11-05",
+      "tags": "automation, plant watering, Arduino, sensors"
+  }
+]

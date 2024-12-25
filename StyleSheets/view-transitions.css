@@ -1,0 +1,9 @@
+.DIYDesktopFridge-Card, .yt-video {
+    view-transition-name: card;
+}
+
+::view-transition-old(card),
+::view-transition-new(card) {
+    animation-duration: 0.7s;
+    mix-blend-mode: normal;
+}
