@@ -39,7 +39,7 @@ h1 {
   width: 95%;
   border-radius: 20px;
   padding: 10px;
-  overflow: hidden;
+  overflow-x:auto;
   overscroll-behavior-inline: contain;
   scrollbar-width: none;
   transition: 0.3s;
@@ -228,12 +228,6 @@ h2 {
     aspect-ratio: 16/9;
     width: 80vw;
     height: auto;
-  }
-
-  .featured-projects {
-    height: fit-content;
-    background-color: rgba(30, 30, 30, 0.772);
-    overflow-x:auto;
   }
 
   .featured-card-content {

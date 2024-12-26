@@ -1,77 +1,226 @@
-/*Home*/
-.profile-image {
-  height: 280px;
+/* General Styles */
+body {
+  color: white;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
-  filter: drop-shadow(0 0 10px #0069fd);
-  padding-top: 20px;
-  animation: profile-glow 10s alternate 1s infinite;
+  flex-direction: column;
+  min-height: 100vh;
+  overflow-x: hidden;
 }
-
-.profile-image img {
-  height: 100%;
-  transition: 0.5s;
+::-webkit-scrollbar {
+  display: none; 
 }
-
-.malaiesun-handle {
-  height: 50px;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-}
-
-.malaiesun-handle img {
-  height: 100%;
-  transform: translateY(-30%);
-  transition: 0.5s;
-}
-
-.social-handles {
-  padding-top: 10px;
-}
-
 .header {
   visibility: hidden;
   animation: fade-in 1s 0.5s forwards;
   z-index: 9999;
 }
-
-/*responsive*/
-
-@media only screen and (min-width: 475px) {
-  .profile-image {
-    animation: profile 1s cubic-bezier(0.165, 0.84, 0.44, 1);
-  }
-  .social-handles {
-    visibility: hidden;
-    animation: sociallinks 1s 0.5s forwards;
-  }
-  .malaiesun-handle img {
-    visibility: hidden;
-    animation: handle 0.6s 0.6s forwards;
-  }
+.container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+/* Main Content Section */
+.main-content {
+  width: 100%;
+  max-width: 1200px;
+  justify-content: center;
+  text-align: center;
 }
 
-@media only screen and (max-width: 475px) {
-  .profile-image {
-    height: 200px;
-    margin-bottom: 20px;
-    animation: profile2 1.2s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+/* Profile Section */
+.profile {
+  display: flex;
+  justify-content: center;
+  width: 90%;
+  align-items: center;
+  padding-bottom: 20px;
+  animation: slide-up 2s forwards;
+}
+
+.profile-img {
+  width: min(40vw,400px);
+  border-radius: 50%;
+  overflow: hidden;
+  transition: 0.5s;
+  animation: profile2 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.profile-img img {
+  width: 100%;
+  height: 100%;
+  animation: profile-glow 10s alternate 1s infinite;
+  
+}
+
+.profile-info {
+  flex: 1;
+  opacity: 1;
+  text-align: left;
+  animation: prof-inf 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.about{
+  opacity: 0;
+  animation: handle 1s 0.7s forwards;
+}
+.profile-info img {
+  height: 50px;
+  visibility: hidden;
+  animation: handle 1s 0.5s forwards;
+}
+
+.profile-info p {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+/* button */
+.interact {
+  display: flex;
+  opacity: 0;
+  gap: 10px;
+  justify-content: left;
+  margin-top: 20px;
+  animation: handle 1s 0.9s forwards;
+}
+
+.interact-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #0069fd;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+  border-radius: 40px;
+  width: 150px;
+  text-align: center;
+  border-style: solid;
+  border-color: #00000000;
+  animation: shake 2s infinite;
+  transition: 0.3s;
+}
+.interact-btn2 {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #ffffff00;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+  border-radius: 40px;
+  width: 150px;
+  text-align: center;
+  border-style: solid;
+  border-color: #ffffff;
+  transition: 0.3s;
+}
+
+.interact-btn:hover {
+  animation: shake 0.1s infinite;
+  filter: drop-shadow(0px 0px 10px #0069fd);
+}
+
+.interact-btn2:hover {
+  filter: drop-shadow(0px 0px 10px #0069fd);
+  border-color: #0069fd; 
+  color: #ffffff; 
+}
+
+/* Skills Section */
+.skills {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 40px;
+  visibility: hidden;
+  
+}
+
+.skill-cards {
+  width: 100%;
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  align-items: stretch;
+  flex-wrap: wrap;
+  
+}
+
+.skill-card {
+  background-color: #1f1f1f6b;
+  border-radius: 8px;
+  padding: 20px;
+  width: 250px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s, box-shadow 0.3s;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  opacity: 0;
+  animation: card 1s 1s forwards;
+}
+
+.material-icons, .material-symbols-outlined{
+  font-size: 40px; 
+  color: #0069fd; 
+  margin-bottom: 10px;
+}
+
+.skill-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.skill-card h3 {
+  font-size: 22px;
+  color: #0069fd;
+  margin-bottom: 5px;
+}
+
+.skill-card p {
+  font-size: 16px;
+}
+.nav-mobile{
+  animation: slide-up 1s  !important;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .profile {
+      flex-direction: column;
   }
-  .nav-mobile {
-    z-index: 9999;
-    visibility: hidden;
-    animation: fade-in 1s 0.5s forwards;
+  .profile-info {
+    text-align: center;
   }
-  .social-handles {
-    visibility: hidden;
-    animation: sociallinks 1s 0.51s forwards;
-    z-index: 3;
+  .profile-img {
+    animation: profile 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+    width: 50%;
   }
-  .malaiesun-handle img {
-    visibility: hidden;
-    animation: handle 1s 0.5s forwards;
+  .about{
+    margin: 10px;
+  }
+  .interact{
+    margin: 10px;
+  }
+  .interact {
+    justify-content: center;
+  }
+  .skill-cards {
+    align-items: center;
+    flex-direction: column;
+      
+  }
+  .skill-card {
+    width: 70%;
+  }
+  
+  .contact-buttons {
+      flex-direction: column;
+  }
+
+  .btn-projects {
+      width: 100%;
   }
 }
 
@@ -96,14 +245,31 @@
 
 @keyframes profile2 {
   0% {
-    opacity: 0;
-    transform: scale(0) translateY(80%);
+    width: min(20vw,200px);
+    transform: translateX(500%);
     filter: drop-shadow(0 0 0px #0069fd);
   }
 
   50% {
-    opacity: 1;
-    transform: scale(1) translateY(50%);
+    width: min(20vw,200px);
+    transform: translateX(-30%);
+    filter: drop-shadow(0 0 0px #0069fd);
+  }
+
+  100% {
+    transform: scale(1) translateY(0);
+    filter: drop-shadow(0 0 5px #0069fd);
+  }
+}
+
+@keyframes prof-inf {
+  0% {
+    transform: scale(3) translateY(20%);
+    filter: drop-shadow(0 0 0px #0069fd);
+  }
+
+  50% {
+    transform: scale(2) translateY(20%);
     filter: drop-shadow(0 0 0px #0069fd);
   }
 
@@ -116,7 +282,7 @@
 @keyframes handle {
   0% {
     visibility: hidden;
-    transform: translateY(100%) rotateX(10deg);
+    transform: translateY(100%) rotateX(15deg);
     opacity: 0;
     scale: 1.1;
     z-index: 2;
@@ -124,9 +290,24 @@
 
   100% {
     visibility: visible;
-    transform: translateY(-30%) rotateX(0deg);
+    transform: translateY(0) rotateX(0deg);
     opacity: 1;
     scale: 1;
+  }
+}
+
+@keyframes card {
+  0% {
+    visibility: hidden;
+    margin-top: 150px;
+    opacity: 0;
+    z-index: 2;
+  }
+
+  100% {
+    visibility: visible;
+    margin-bottom: 0px;
+    opacity: 1;
   }
 }
 
@@ -141,38 +322,6 @@
   }
 }
 
-@keyframes sociallinks {
-  0% {
-    visibility: hidden;
-    transform: translateY(250%) rotateX(30deg);
-    opacity: 0;
-    scale: 1.2;
-    z-index: 2;
-  }
-
-  100% {
-    visibility: visible;
-    transform: translateY(0) rotateX(0deg);
-    opacity: 1;
-    scale: 1;
-  }
-}
-
-@keyframes sociallinks2 {
-  0% {
-    transform: translateY(30%) rotateX(30deg);
-    visibility: hidden;
-    opacity: 0;
-    scale: 1.2;
-  }
-
-  100% {
-    transform: translateY(0) rotateX(0deg);
-    visibility: visible;
-    opacity: 1;
-    scale: 1;
-  }
-}
 
 @keyframes fade-in {
   0% {
@@ -186,51 +335,32 @@
   }
 }
 
-/*socialhandles*/
-
-@media only screen and (min-width: 475px) {
-  .twt,
-  .ins,
-  .git,
-  .yt {
-    animation: open-close 1.5s 1.2s;
+@keyframes slide-up {
+  0% {
+    transform: translateY(20%);
   }
-
-  .brand-name {
-    animation: open-close-text 1.5s 1.2s;
-  }
-}
-
-@keyframes open-close {
-  30% {
-    backdrop-filter: blur(10px);
-    width: 140px;
-  }
-
-  70% {
-    backdrop-filter: blur(10px);
-    width: 140px;
+  50% {
+    transform: translateY(20%);
   }
 
   100% {
-    backdrop-filter: blur(10px);
-    width: 40px;
+    transform: translateY(0%);
   }
 }
 
-@keyframes open-close-text {
-  30% {
-    font-size: 18px;
-    padding-left: 8px;
-  }
-
-  70% {
-    font-size: 18px;
-    padding-left: 8px;
-  }
-
+@keyframes shake {
+  0%,
+  10%,
+  65%,
   100% {
-    font-size: 0;
-    padding-left: 0;
+    transform: rotate(0deg) scale(1);
+  }
+  30%,
+  40% {
+    transform: rotate(-1deg) scale(1.05);
+  }
+  35%,
+  45% {
+    transform: rotate(1deg) scale(1.05);
   }
 }

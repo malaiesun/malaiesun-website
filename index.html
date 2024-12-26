@@ -1,101 +1,133 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
     <meta property="og:title" content="Home">
     <meta property="og:description" content="Home page of malaiesun.com">
     <meta property="og:image" content="https://malaiesun.com/Pictures/profilePIC.png">
     <meta property="og:image:alt" content="A picture of Malaiesun">
-    <link rel="icon" type="image/x-icon" href="Pictures/favicon.png">
-    <script src="https://kit.fontawesome.com/b356ad9dc8.js" crossorigin="anonymous"></script>
+    <meta name="theme-color" content="#121212">
+    <link rel="icon" href="Pictures/favicon.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="StyleSheets/index.css">
-    <link rel="stylesheet" type="text/css" href="StyleSheets/general.css">
-    <link rel="stylesheet" type="text/css" href="StyleSheets/header.css">
-    <link rel="stylesheet" type="text/css" href="StyleSheets/navmobile.css">
-    <link rel="stylesheet" type="text/css" href="StyleSheets/socialstyle.css">
+    <link rel="stylesheet" href="StyleSheets/index.css">
+    <link rel="stylesheet" href="StyleSheets/general.css">
+    <link rel="stylesheet" href="StyleSheets/header.css">
+    <link rel="stylesheet" href="StyleSheets/navmobile.css">
 </head>
 
 <body>
-
+    <!-- Header -->
     <nav class="header">
         <div class="nav-logo">
             <a href="/"><img class="nav-logo" src="Pictures/malaiesunLOGO.png" alt="malaiesun logo"></a>
         </div>
         <div class="nav-menu">
-            <a href="/work" class="nav-items nav-work">Work</a>
-            <a href="/about" class="nav-items nav-about">About</a>
-            <a href="/service" class="nav-items nav-service">Service</a>
-            <a href="/contact" class="nav-items nav-contact">Contact</a>
+            <a href="/" class="nav-items icon-blue">Home</a>
+            <a href="/work" class="nav-items">Work</a>
+            <a href="/Service" class="nav-items">Service</a>
+            <a href="/contact" class="nav-items">Contact</a>
         </div>
     </nav>
     <nav>
-    <div class="nav-mobile-container">
-        <nav class="nav-mobile">
-            <a href="/work" class="nav-mobile-items nav-mobile-work"><span>Work</span><i class="ri-flask-line"></i></a>
-            <a href="/about" class="nav-mobile-items nav-mobile-about"><span>About</span><i
-                    class="ri-user-line"></i></a>
-            <a href="/service" class="nav-mobile-items nav-mobile-service"><span>Service</span><i
-                    class="ri-tools-line"></i></a>
-            <a href="/contact" class="nav-mobile-items nav-mobile-contact"><span>Contact</span><i
-                    class="ri-mail-line"></i></a>
-    </div>
-    </nav>
+        <div class="nav-mobile-container">
 
-    <section class="home">
-        <div class="home-content">
-            <div class="profile-image">
-                <img class="profile-img" src="Pictures/profilePIC.png" alt="Picture of malaiesun">
-            </div>
-            <div class="malaiesun-handle">
-                <img src="Pictures/malaiesunHANDLE.png" alt="@malaiesun social media handle">
-            </div>
-            <div class="social-handles">
-                <!-- Twitter Icon -->
-                <div class="icon twt" onclick="openSocialMedia('https://twitter.com/malaiesun')">
-                    <i class="ri-twitter-fill"></i>
-                    <span class="brand-name">Twitter</span>
-                </div>
-            
-                <!-- Instagram Icon -->
-                <div class="icon ins" onclick="openSocialMedia('https://instagram.com/malaiesun')">
-                    <i class="ri-instagram-fill"></i>
-                    <span class="brand-name">Instagram</span>
-                </div>
-            
-                <!-- GitHub Icon -->
-                <div class="icon git" onclick="openSocialMedia('https://github.com/malaiesun')">
-                    <i class="ri-github-fill"></i>
-                    <span class="brand-name">GitHub</span>
-                </div>
-            
-                <!-- YouTube Icon -->
-                <div class="icon yt" onclick="openSocialMedia('https://youtube.com/@malaiesun')">
-                    <i class="ri-youtube-fill"></i>
-                    <span class="brand-name">YouTube</span>
-                </div>
-            </div>
-            
-
+            <nav class="nav-mobile">
+                <a href="/" class="nav-mobile-items nav-mobile-work icon-blue"><span>Home</span><i class="ri-home-line"></i></a>
+                <a href="/work" class="nav-mobile-items nav-mobile-about"><span>Work</span><i
+                        class="ri-flask-line"></i></a>
+                <a href="/service" class="nav-mobile-items nav-mobile-service"><span>Service</span><i
+                        class="ri-tools-line"></i></a>
+                <a href="/contact" class="nav-mobile-items nav-mobile-contact"><span>Contact</span><i
+                        class="ri-mail-line"></i></a>
         </div>
-        <script>
-            function openSocialMedia(url) {
-                window.open(url, '_blank');
-            }
-        </script>
-    </section>
-    <script type="text/javascript" src="JavaScript/vanilla-tilt.js"></script>
-    <script type="text/javascript">
-        VanillaTilt.init(document.querySelectorAll(".profile-img"), {
-            max: 'ontouchstart' in window ? 0 : (window.innerWidth >= 1024 || window.innerHeight >= 1024 ? 15 : 0),
-            speed: 1000,
-            //glare: 'ontouchstart' in window ? false : (window.innerWidth >= 1024 && window.innerHeight >= 560 ? true : false),
+    </nav>
+    <!-- Main Content -->
+    <section class="main-content">
+        <div class="container">
+            <!-- Profile Section -->
+            <div class="profile">
+                <div class="profile-img">
+                    <img src="Pictures/profilePIC.png" alt="Malaiesun">
+                </div>
+                <div class="profile-info">
+                    <img src="Pictures/malaiesunHANDLE.png" alt="Malaiesun">
+                    <p class="about">Innovating at the intersection of science, engineering, and technology.
+                        Passionate about robotics, embedded systems, and 3D printing.
+                        Bringing ideas to life through creative problem-solving and design.</p>
+                    <div class="interact">
+                        <a href="/work" class="interact-btn">Explore</a>
+                        <a href="/contact" class="interact-btn2">Contact ME</a>
+                    </div>
+                </div>
+            </div>
 
-        });
-    </script>
+            <!-- Skills Section -->
+            <div class="skills">
+                <div class="skill-cards">
+                    <!-- VITC Card -->
+                    <div class="skill-card">
+                        <span class="material-symbols-outlined">school</span>
+                        <h3>VIT Chennai</h3>
+                        <p>Building expertise in Electrical and Electronics Engineering through my undergraduate
+                            education.</p>
+                    </div>
+                    <!-- Embedded Systems Card -->
+                    <div class="skill-card">
+                        <span class="material-icons">memory</span>
+                        <h3>Embedded Systems</h3>
+                        <p>Designing and implementing microcontroller-based systems for a wide range of applications.
+                        </p>
+                    </div>
+                    <!-- Programming Card -->
+                    <div class="skill-card">
+                        <span class="material-icons">code</span>
+                        <h3>Programming</h3>
+                        <p>Proficient in Java, Python, Web Development and embedded programming languages.</p>
+                    </div>
+                    <div class="skill-card">
+                        <span class="material-symbols-outlined">deployed_code</span>
+                        <h3>Prototyping</h3>
+                        <p>Designing and prototyping custom 3D models and PCBs for various applications.</p>
+                    </div>
+
+                        <!-- Robotics Card -->
+                        <div class="skill-card">
+                            <span class="material-symbols-outlined"> robot_2</span>
+                            <h3>Robotics</h3>
+                            <p>Won robotics competitions consecutively for 5 years. Designing robots for real-world
+                                problem-solving and automation.</p>
+                        </div>
+
+                        <!-- IoT & Home Assistant Card -->
+                        <div class="skill-card">
+                            <span class="material-symbols-outlined">devices</span>
+                            <h3>Home Automation</h3>
+                            <p>Running a home automation system with Home Assistant, integrating smart
+                                devices and IoT products.</p>
+                        </div>
+
+                        <!-- Power Tools Card -->
+                        <div class="skill-card">
+                            <span class="material-symbols-outlined">build</span>
+                            <h3>Power Tools</h3>
+                            <p>Experienced in using power tools like drills and saws for basic woodworking and
+                                prototyping tasks.</p>
+                        </div>
+
+                        <!-- UI/UX Design Card -->
+                        <div class="skill-card">
+                            <span class="material-symbols-outlined">design_services</span>
+                            <h3>UI/UX Design</h3>
+                            <p>Passionate about creating intuitive and aesthetically pleasing user interfaces, focusing
+                                on user experience and design principles.</p>
+                        </div>
+                </div>
+            </div>
 </body>
 
 </html>

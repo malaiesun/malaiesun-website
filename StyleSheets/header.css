@@ -45,6 +45,11 @@
   font-weight: 700;
   transition: color 0.2s ease-in-out, font-size 0.3s;
 }
+
+.icon-blue{
+  color: #0069fd !important;
+}
+
 .nav-items:hover {
   color: #0069fd;
   font-size: 20px;
