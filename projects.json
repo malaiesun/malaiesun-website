@@ -24,7 +24,7 @@
       "tags": "3D printing, robotic arm, microcontroller, robotics"
   },
   {
-      "title": "Automated Plant Watering System",
+      "title": "Plant Watering System",
       "description": "A smart watering system for plants, powered by Arduino and sensors to maintain optimal soil moisture.",
       "thumbnail": "images/plant_watering_system.jpg",
       "link": "#aut",
