@@ -168,7 +168,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         noResults = false;
       } else {
         card.classList.add('not-searched');
-      }z
+      }
     });
 
     if (noResults) {
