@@ -1,123 +1,201 @@
+/* General styles */
 body {
-  animation: fade-in 0.5s;
+  color: white;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Main container for layout */
+.content-container {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  margin: 0 auto;
+  max-width: 2000px;
+  gap: 20px;
+  padding: 20px;
+  animation: scale-in 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+/* Main content column */
+.main-content {
+  flex: 3;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Related projects column */
+.related-projects {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 0px;
+  background-color: #2222227b;
+  padding: 20px;
+  border-radius: 8px;
+  overflow-y: auto;
+  animation: scale-in 1s;
+}
+
+.related-projects h2 {
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+.related-project {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  gap: 15px;
+  margin-bottom: 20px;
+  font-weight: bold;
+  text-align: center;
+  transition: 0.3s;
+}
+
+.related-project:hover {
+  scale: 1.01;
+}
+
+.related-project-img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+  border-radius: 15px;
+  margin-bottom: 10px;
+}
+
+/* Video container styling */
 .video-container {
   display: flex;
-  width: 70%;
-  margin: 25px auto 10px auto;
-  max-height: 55vw;
-  overflow: hidden;
-}
-.youtube-video-container {
-  vertical-align: middle;
   width: 100%;
-  height: 100%;
+  aspect-ratio: 16 / 9;
   border-radius: 15px;
   overflow: hidden;
+  animation: scale-in 0.6s;
 }
+
 .iframe-container {
   position: relative;
   width: 100%;
   height: 0;
   padding-bottom: 56.25%;
 }
+
 .yt-video {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  aspect-ratio: 16 / 9;
+  height: 100%;
 }
 
+/* Video details */
 .video-details {
-  vertical-align: top;
-  width: 100%;
-  color: white;
-  padding-top: 15px;
-  padding-left: 20px;
+  padding-bottom: 15px;
+  padding-left: 5px;
+  animation: scale-in 0.7s;
 }
+
 .video-details h2 {
-  font-size: 30px;
-  padding-bottom: 1vw;
+  font-size: 24px;
+  margin-bottom: 10px;
 }
+
+/* Materials required */
 .materials-required {
-  width: 70%;
-  margin: 0 auto;
   padding: 20px;
-  color: #cecece;
+  background-color: #2222227b;
+  border-radius: 8px;
+  animation: scale-in 0.8s;
 }
 
 .materials-required h2 {
-  color: white;
-  font-size: 24px;
-  font-weight: bold;
   text-align: center;
-  padding: 10px;
+  margin-bottom: 10px;
 }
 
 .materials-required ul {
-  list-style-type: none;
+  list-style: none;
   padding: 0;
 }
 
 .materials-required li {
-  font-size: 18px;
-  line-height: 1.5;
-  margin-top: 10px;
-  padding-bottom: 10px;
-  border-bottom: 3px solid rgba(167, 167, 167, 0.514);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 0;
+  border-bottom: 1px solid #444;
+  font-size: medium;
+  transition: 0.3s;
 }
 
 .materials-required img {
-  width: 60px;
-  margin-right: 10px;
-  vertical-align: middle;
+  width: 50px;
+  height: auto;
+  transition: 0.3s;
+}
+.materials-required li:hover img {
+  width: 100px;
+}
+.materials-required li:hover { 
+  font-size: 25px;
+  font-weight: bolder;
 }
 
+/* Instructions styling */
 .instructions {
-  width: 70%;
-  margin: 0 auto;
+  padding: 20px;
+  background-color: #2222227b;
+  border-radius: 8px;
+  animation: scale-in 0.9s;
 }
-.instructions ol {
-  padding-left: 20px;
-}
+
 .instructions h2 {
   font-size: 24px;
-  font-weight: bold;
-  color: #ffffff;
-  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.instructions ol {
+  margin-left: 20px;
+  list-style: decimal;
 }
 
 .instructions li {
-  font-size: 16px;
-  color: #cecece;
-  line-height: 1.5;
   margin-bottom: 10px;
-}
-.circuit {
-  position: relative;
-  width: 50%;
-  margin: 0 auto;
-  text-align: center;
-  color: white;
-  padding-bottom: 30px;
-}
-.circuit h2 {
-  margin: 15px;
-}
-.circuit img {
-  width: 100%;
-  cursor: pointer;
-  transition: 0.4s;
-}
-.circuit img:hover {
-  scale: 1.01;
-}
-.circuit img:active {
-  scale: 1;
+  font-size: 16px;
+  padding: 5px;
 }
 
+/* Circuit diagram */
+.circuit {
+  background-color: #2222227b;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  animation: scale-in 1s;
+}
+
+.circuit img {
+  max-width: 100%;
+  margin: 10px 0;
+  border-radius: 15px;
+  transition: transform 0.3s ease;
+}
+
+.circuit h2 {
+  margin: 10px 0;
+}
+
+.circuit img:hover {
+  transform: scale(0.995);
+}
 #modal {
   position: fixed;
   top: 0;
@@ -142,7 +220,7 @@ body {
 
 #modal img {
   max-width: 95%;
-  max-height: 80%;
+  max-height: 90%;
   scale: 0.8;
   transition: 0.3s;
 }
@@ -159,160 +237,74 @@ body {
   cursor: pointer;
   font-size: 40px;
 }
-/* Animations */
 
-@keyframes slide-left {
-  0% {
-    opacity: 0;
-    transform: translateX(50%);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0%);
-  }
-}
-
-@keyframes fade-in {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-/* Responsive adjustments for screens below 1000px */
-@media only screen and (max-width: 1000px) {
-  .video-container {
-    width: 95%; /* Makes the video container wider on smaller screens */
-  }
-
-  .video-details {
-    width: 0;
-    visibility: hidden; /* Hides video details on smaller screens */
-    padding: 0 0;
-  }
-
-  .materials-required {
-    padding: 10px;
-    width: 90%; /* Makes the materials section take up more space */
-  }
-
-  .materials-required li {
-    font-size: 14px; /* Smaller font size for list items */
-  }
-
-  .materials-required img {
-    width: 40px; /* Smaller images for materials */
-  }
-
-  .instructions {
-    width: 80%; /* Slightly smaller width for instructions */
-  }
-
-  .instructions h2 {
-    text-align: center; /* Centers the instructions header */
-  }
-
-  .instructions ol {
-    padding-left: 0px; /* Adjusts padding for smaller screens */
-  }
-
-  .circuit {
-    width: 80%; /* Makes the circuit image take up more space */
-  }
-}
-
-/* Animation for very small screens below 475px */
-@media only screen and (max-width: 475px) {
-  body {
-    animation: slide-left 0.5s;
-  }
-}
-
-/* Keyframes for sliding animation */
-@keyframes slide-left {
-  0% {
-    opacity: 0;
-    transform: translateX(50%);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0%);
-  }
-}
-
-
-/*related*/
-
-/* Container to hold both main content and related projects */
-.content-container {
-  display: flex;
-  justify-content: space-between;
-  gap: 20px;
-  padding: 20px;
-}
-
-/* Main content section including video and materials */
-.main-content {
-  width: 70%; /* Main content takes up most of the width */
-}
-
-/* Related Projects section */
-.related-projects {
-  width: 28%;
-  background-color: #333;
-  padding: 20px;
-  color: #cecece;
-  border-radius: 8px;
-}
-
-.related-projects h2 {
-  font-size: 24px;
-  color: white;
-  margin-bottom: 15px;
-}
-
-.related-project {
-  margin-bottom: 20px;
-  display: flex;
-  align-items: center;
-  gap: 15px;
-}
-
-.related-project-img {
-  width: 60px;
-  height: 60px;
-  object-fit: cover;
-  border-radius: 5px;
-}
-
-.related-project h3 {
-  font-size: 18px;
-  color: white;
-  margin-bottom: 5px;
-}
-
-.related-project p {
-  font-size: 14px;
-  color: #cecece;
-  margin-bottom: 5px;
-}
-
-.related-project-link {
-  color: #1E90FF;
-  font-size: 14px;
-  text-decoration: none;
-}
-
-/* Responsive layout for mobile */
+/* Responsive layout */
 @media only screen and (max-width: 1000px) {
   .content-container {
     flex-direction: column;
+    gap: 20px;
+  }
+  .materials-required,
+  .instructions,
+  .circuit,
+  .related-projects {
+    border-radius: 20px;
+  }
+  .related-projects {
+    width: 100%;
+    margin-top: 20px;
+    background-color: #2222227b;
+    overflow-y: auto;
+    height: fit-content;
   }
 
-  .related-projects {
-    width: 100%; /* Full width on small screens */
-    margin-top: 20px;
+  .related-project-img {
+    width: 80svw;
+    padding-bottom: 10px;
+  }
+}
+
+.video-description-wrapper {
+  overflow: hidden;
+}
+
+.toggle-description-btn {
+  display: none;
+}
+/* Collapsible styles for mobile */
+@media only screen and (max-width: 768px) {
+  .video-description-wrapper {
+    max-height: 20px;
+  }
+
+  .video-description-wrapper.expanded {
+    max-height: fit-content;
+  }
+
+  .toggle-description-btn {
+    display: block;
+    margin-top: 10px;
+    background-color: #ffffff00;
+    color: rgb(187, 179, 179);
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+  }
+
+  .toggle-description-btn:focus {
+    outline: none;
+  }
+}
+
+@keyframes scale-in {
+  0% {
+    opacity: 0;
+    scale: 0.5;
+    margin-bottom: 1000px;
+  }
+  100% {
+    opacity: 1;
+    scale: 1;
+    
   }
 }

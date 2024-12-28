@@ -53,6 +53,13 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
   }
 
+  // Helper function to parse and compare dates
+  const parseDate = dateStr => new Date(dateStr);
+
+  const sortByDate = projects => {
+    return projects.sort((a, b) => parseDate(b.date) - parseDate(a.date));
+  };
+
   // Fetch Featured Projects Data
   async function fetchFeaturedProjects() {
     try {
@@ -86,7 +93,10 @@ document.addEventListener('DOMContentLoaded', async () => {
       return;
     }
 
-    for (const project of projects) {
+    // Sort projects by date (latest first)
+    const sortedProjects = sortByDate(projects);
+
+    for (const project of sortedProjects) {
       // Fallback for empty or missing title
       project.title = project.title.trim() ? project.title : "Unavailable";
 
@@ -99,9 +109,8 @@ document.addEventListener('DOMContentLoaded', async () => {
       const projectCard = document.createElement('div');
       projectCard.classList.add('featured-card');
 
-  
       const projectLink = document.createElement('a');
-      projectLink.href = project.link; 
+      projectLink.href = project.link;
       projectLink.innerHTML = `
         <div class="featured-card-imgholder">
           <img src="${project.thumbnail}" alt="${project.title}">
@@ -112,7 +121,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         </div>
       `;
 
-      projectCard.appendChild(projectLink); 
+      projectCard.appendChild(projectLink);
       featuredProjects.appendChild(projectCard);
     }
   }
@@ -126,16 +135,18 @@ document.addEventListener('DOMContentLoaded', async () => {
       return;
     }
 
-    projects.forEach(project => {
+    // Sort projects by date (latest first)
+    const sortedProjects = sortByDate(projects);
+
+    sortedProjects.forEach(project => {
       // Fallback for empty or missing title
       project.title = project.title.trim() ? project.title : "Unavailable";
 
       const projectCard = document.createElement('div');
       projectCard.classList.add('archive-card');
 
-  
       const projectLink = document.createElement('a');
-      projectLink.href = project.link; 
+      projectLink.href = project.link;
 
       projectLink.innerHTML = `
         <div class="archive-card-imgholder">
@@ -147,7 +158,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         </div>
       `;
 
-      projectCard.appendChild(projectLink); 
+      projectCard.appendChild(projectLink);
       archiveSection.appendChild(projectCard);
     });
   }
